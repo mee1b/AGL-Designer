@@ -2,6 +2,9 @@
 #define DESIGNER_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+
+#include "choicetemplate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,5 +28,6 @@ private slots:
 private:
     Ui::Designer *ui;
     bool checkReleaseText() const;
+    ChoiceTemplate* t = new ChoiceTemplate;
 };
 #endif // DESIGNER_H

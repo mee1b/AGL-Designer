@@ -2,6 +2,7 @@
 #include "./ui_designer.h"
 #include <QMessageBox>
 
+
 /*Завтра делаю класс ChoiceTemplate - где, после нажатия кнопки доабвить шаблон, будет появляться окно со списком заготовок.
  * И если успею, делаю еще окно в при старте приложения, какие подсказки будут,
  * без подсказок или с подсказками(все tool и descr включены)*/
@@ -13,6 +14,8 @@ Designer::Designer(QWidget *parent)
     ui->setupUi(this);
     // ставим окно на полный экран
     setWindowState(Qt::WindowState::WindowMaximized);
+    setWindowTitle("AGL-Designer");
+
 
     ui->outputHintsDev->setFocus();
 
@@ -36,12 +39,14 @@ Designer::Designer(QWidget *parent)
 Designer::~Designer()
 {
     delete ui;
+    delete t;
 }
 
 //обработчик создания новой сцены — добавляет шаблон
 void Designer::newScene()
 {
-    QMessageBox::information(this, tr("Информация!"), tr("Добавляем новую сцену - шаблон!"));
+    // QMessageBox::information(this, tr("Информация!"), tr("Добавляем новую сцену - шаблон!"));
+    t->exec();
 }
 
 //обработчик сохранения написанного текста в JSON файл
