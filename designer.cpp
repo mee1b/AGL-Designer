@@ -5,10 +5,6 @@
 #include <QTimer>
 
 
-/*Завтра делаю класс ChoiceTemplate - где, после нажатия кнопки доабвить шаблон, будет появляться окно со списком заготовок.
- * И если успею, делаю еще окно в при старте приложения, какие подсказки будут,
- * без подсказок или с подсказками(все tool и descr включены)*/
-
 Designer::Designer(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Designer)
@@ -47,7 +43,7 @@ Designer::Designer(QWidget *parent)
     //коннекты для мониторинга диалога подсказок
     connect(hintsWindow.get(), &QDialog::accepted, this, &Designer::hintsOn);
     //Пока как заглушка, при вызове диалога из главного окна будет использоваться
-    connect(hintsWindow.get(), &QDialog::accepted, this, &Designer::hintsOff);
+    connect(hintsWindow.get(), &QDialog::rejected, this, &Designer::hintsOff);
 }
 
 Designer::~Designer()
