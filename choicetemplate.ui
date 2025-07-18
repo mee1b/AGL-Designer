@@ -18,14 +18,14 @@
     <widget class="QListWidget" name="TemplateList"/>
    </item>
    <item row="1" column="0">
-    <widget class="QPushButton" name="Choice">
+    <widget class="QPushButton" name="b_Choice">
      <property name="text">
       <string>Выбрать (Enter)</string>
      </property>
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QPushButton" name="Cancel">
+    <widget class="QPushButton" name="b_Cancel">
      <property name="text">
       <string>Отмена (Esc)</string>
      </property>

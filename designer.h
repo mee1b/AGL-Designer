@@ -1,9 +1,10 @@
-#ifndef DESIGNER_H
-#define DESIGNER_H
+#pragma once
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <memory>
 
+#include "hintswindow.h"
 #include "choicetemplate.h"
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +28,15 @@ private slots:
 
 private:
     Ui::Designer *ui;
-    bool checkReleaseText() const;
-    ChoiceTemplate* t = new ChoiceTemplate;
+    bool isTextEmpty() const;
+
+    void showNameTemplate() const;
+    void noTemplateChoice() const;
+
+    void updateAccessible(const QString& text) const;
+
+    void hintsOn() const;
+    void hintsOff() const;
+    std::unique_ptr<ChoiceTemplate> choiceTemplate;
+    std::unique_ptr<HintsWindow> hintsWindow;
 };
-#endif // DESIGNER_H
